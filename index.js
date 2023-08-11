@@ -18,7 +18,7 @@ db.once("open", () => console.log("Database Connected..."));
 
 app.use(
   cors({
-    origin: ["https://frontend-users-eta.vercel.app/"],
+    origin: ["https://frontend-users-eta.vercel.app"],
     methods: ["POST", "GET", "PATCH", "DELETE"],
     credentials: true,
   })
