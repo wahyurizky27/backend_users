@@ -18,7 +18,8 @@ db.once("open", () => console.log("Database Connected..."));
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: ["https://frontend-users-eta.vercel.app/"],
+    methods: ["POST", "GET", "PATCH", "DELETE"],
     credentials: true,
   })
 );
