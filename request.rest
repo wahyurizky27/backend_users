@@ -1,15 +1,15 @@
-GET http://localhost:5000/users
+GET http://localhost:5000/sectors
 
 ###
-GET http://localhost:5000/users/64d5856ac4f11660e0aa6898
+GET http://localhost:5000/users/64d5a240f7c78c9703ad9001
 
 ###
 POST http://localhost:5000/users
 Content-Type: application/json
 
 {
-    "name": "Wahyu",
-    "email": "wahyu@gmail.com",
+    "name": "Donir",
+    "email": "doni@gmail.com",
     "term": true
 }
 
