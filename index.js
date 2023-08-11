@@ -2,15 +2,16 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import UserRoute from "./routes/UserRoute.js";
+import "dotenv/config"; // Import and configure dotenv
+
+const PORT = process.env.PORT;
+const MONGO_URI = process.env.MONGODB_CONNECT_URI;
 
 const app = express();
-mongoose.connect(
-  "mongodb+srv://wahyurizkyramadhan007:kATIAjbbm6ptbQdP@gettingstarted.4hu4unm.mongodb.net/",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-);
+mongoose.connect(`${MONGO_URI}`, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 const db = mongoose.connection;
 db.on("error", (error) => console.log(error));
 db.once("open", () => console.log("Database Connected..."));
@@ -24,4 +25,4 @@ app.use(
 app.use(express.json());
 app.use(UserRoute);
 
-app.listen(5000, () => console.log("Server is up and running ..."));
+app.listen(PORT, () => console.log(`Server is up and running on port ${PORT}`));
